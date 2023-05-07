@@ -1,3 +1,22 @@
 from django.db import models
+from mptt.models import MPTTModel, TreeForeignKey
 
-# Create your models here.
+
+class Employee(MPTTModel):
+    name = models.CharField(max_length=50)
+    position = models.CharField(max_length=50)
+    hire_date = models.DateField(auto_now_add=True)
+    salary = models.IntegerField()
+    parent = TreeForeignKey(
+        'self',
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name='children',
+    )
+
+    def __str__(self) -> str:
+        return f'{self.id} Name: {self.name}'
+    
+    class MPTTMeta:
+        order_insertion_by = ['name']
