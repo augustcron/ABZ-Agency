@@ -4,4 +4,3 @@ from .models import Employee
 
 
 admin.site.register(Employee, MPTTModelAdmin)
-# admin.site.register(Employee)

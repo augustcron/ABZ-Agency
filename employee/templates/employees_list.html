@@ -2,7 +2,7 @@
 <ul>
     {% recursetree employees %}
         <li>
-            {{ node.name }} -- {{ node.parent }}
+            {{ node.name }} -- {{ node.position }}
             {% if not node.is_leaf_node %}
                 <ul class="children">
                     {{ children }}

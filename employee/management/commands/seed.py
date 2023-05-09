@@ -79,7 +79,7 @@ class Command(BaseCommand):
     help = 'Seed the database with initial data'
     def handle(self, *args, **options):
 
-        for i in range(100):
+        for i in range(50):
             current_position = get_position()
             x = Employee.objects.create(
                 name = get_name(),
