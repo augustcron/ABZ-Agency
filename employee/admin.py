@@ -1,3 +1,7 @@
 from django.contrib import admin
+from mptt.admin import MPTTModelAdmin
+from .models import Employee
 
-# Register your models here.
+
+admin.site.register(Employee, MPTTModelAdmin)
+# admin.site.register(Employee)

@@ -3,7 +3,7 @@ from mptt.models import MPTTModel, TreeForeignKey
 
 
 class Employee(MPTTModel):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=100)
     position = models.CharField(max_length=50)
     hire_date = models.DateField(auto_now_add=True)
     salary = models.IntegerField()
@@ -16,7 +16,7 @@ class Employee(MPTTModel):
     )
 
     def __str__(self) -> str:
-        return f'{self.id} Name: {self.name}'
+        return self.name
     
     class MPTTMeta:
         order_insertion_by = ['name']
