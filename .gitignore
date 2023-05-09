@@ -3,3 +3,4 @@ abz_agency/__pycache__/
 employee/__pycache__/
 employee/migrations/0001_initial.py
 employee/migrations/__pycache__/
+employee/management/commands/__pycache__/
